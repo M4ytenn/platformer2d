@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Transform _legs;
     [SerializeField] private Transform _attackPoint;
+    [SerializeField] private float _damage = 1;
 
     private PlayerMover _mover;
     private PlayerCombat _combat;

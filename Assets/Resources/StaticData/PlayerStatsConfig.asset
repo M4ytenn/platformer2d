@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _combatConfig:
     _attackRange: 1
-    _damage: 1
+    _damage: 2
   _movementConfig:
     _speed: 5
     _jumpPower: 5
