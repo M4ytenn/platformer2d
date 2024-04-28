@@ -6,6 +6,11 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private float _attackRange = 1;
     [SerializeField] private float _damage = 1;
 
+    private void Start()
+    {
+        
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
