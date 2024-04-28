@@ -1,10 +1,19 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    [SerializeField] private Transform _attackPoint;
-    [SerializeField] private float _attackRange = 1;
-    [SerializeField] private float _damage = 1;
+    private Transform _attackPoint;
+
+    private float _attackRange;
+    private float _damage;
+
+    public void Init(PlayerStatsConfig playerStatsConfig, Transform attackPoint)
+    {
+        _attackPoint = attackPoint;
+        _attackRange = playerStatsConfig.CombatConfig.AttackRange;
+        _damage = playerStatsConfig.CombatConfig.Damage;
+    }
 
     private void Update()
     {

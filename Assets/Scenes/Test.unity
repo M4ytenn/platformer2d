@@ -332,6 +332,51 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &953478834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 953478836}
+  - component: {fileID: 953478835}
+  m_Layer: 0
+  m_Name: GameBootstrapper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &953478835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953478834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65611c4eb5959fa488f76986a464cbe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1028204299}
+--- !u!4 &953478836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953478834}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1028204296
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,6 +480,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ef064d7cf114534ab8ea727920918f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _legs: {fileID: 1977151595}
+  _attackPoint: {fileID: 1911831378}
 --- !u!114 &1028204300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,12 +494,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b679213fcff9a604981a86e92c5692bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
-  _jumpPower: 15
-  _groundMask:
-    serializedVersion: 2
-    m_Bits: 64
-  _legs: {fileID: 1977151595}
 --- !u!114 &1028204302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,9 +506,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d66426bead8f084b9eea48b98ad51f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackPoint: {fileID: 1911831378}
-  _attackRange: 1
-  _damage: 1
 --- !u!50 &1028204303
 Rigidbody2D:
   serializedVersion: 4
