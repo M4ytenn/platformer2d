@@ -8,6 +8,8 @@ public class PlayerCombat : MonoBehaviour
     private float _attackRange;
     private float _damage;
 
+    public bool IsAttacking { get; private set; } = false;
+
     public void Init(PlayerStatsConfig playerStatsConfig, Transform attackPoint)
     {
         _attackPoint = attackPoint;
@@ -19,15 +21,25 @@ public class PlayerCombat : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange);
+            if (IsAttacking == false)
+                StartAttack();
+        }
+    }
 
-            foreach (Collider2D collider in colliders)
+    public void PerformAttack()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(_attackPoint.position, _attackRange);
+
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.TryGetComponent(out Health health))
             {
-                if (collider.TryGetComponent(out Health health))
-                {
-                    health.ApplyDamage(_damage);
-                }
+                health.ApplyDamage(_damage);
             }
         }
     }
+
+    public void EndAttack() => IsAttacking = false;
+
+    private void StartAttack() => IsAttacking = true;
 }

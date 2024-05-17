@@ -4,8 +4,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMover : MonoBehaviour
 {
+    [SerializeField] private Rigidbody2D _rigidbody;
+
     private Transform _legs;
-    private Rigidbody2D _rigidbody;
 
     private float _speed;
     private float _jumpPower;
@@ -14,9 +15,10 @@ public class PlayerMover : MonoBehaviour
 
     private bool _onGround;
 
+    public Rigidbody2D Rigidbody => _rigidbody;
+
     public void Init(PlayerStatsConfig playerStatsConfig, Transform legs)
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
         _legs = legs;
 
         _speed = playerStatsConfig.MovementConfig.Speed;

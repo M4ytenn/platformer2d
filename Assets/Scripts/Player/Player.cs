@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
 
     private PlayerMover _mover;
     private PlayerCombat _combat;
+    private PlayerAnimator _animator;
 
     public void Init(PlayerStatsConfig playerStatsConfig)
     {
