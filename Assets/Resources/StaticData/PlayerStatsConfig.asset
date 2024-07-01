@@ -17,7 +17,7 @@ MonoBehaviour:
     _damage: 2
   _movementConfig:
     _speed: 5
-    _jumpPower: 5
+    _jumpPower: 12
     _legsRadius: 0.1
     _groundMask:
       serializedVersion: 2
